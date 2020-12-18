@@ -1,0 +1,28 @@
+version: '3'
+
+networks:
+  nginx-proxy:
+    external: true
+  db:
+
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    env_file:
+      - ./config/pg_env
+    networks:
+      - db
+    restart: always
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    env_file:
+      - ./config/env
+    networks:
+      - nginx-proxy
+      - db
+    restart: always
+    depends_on:
+      - postgres

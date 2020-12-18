@@ -1,0 +1,5 @@
+# set here the url of the bitwarden instance
+url: bitwarden.example.com 
+# set empty the two parameters above
+http_port: 
+https_port: 

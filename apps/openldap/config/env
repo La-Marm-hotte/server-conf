@@ -1,0 +1,7 @@
+LDAP_ADMIN_PASSWORD=xxxxxxxxxxxx
+LDAP_ORGANISATION=Example Organisation
+LDAP_DOMAIN=example.com
+LDAP_TLS_CRT_FILENAME=live/ldap.example.com/cert.pem
+LDAP_TLS_KEY_FILENAME=live/ldap.example.com/privkey.pem
+LDAP_TLS_CA_CRT_FILENAME=live/ldap.example.com/fullchain.pem
+LDAP_TLS_VERIFY_CLIENT=try

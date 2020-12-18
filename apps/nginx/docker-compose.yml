@@ -1,0 +1,20 @@
+version: '3'
+
+networks:
+  nginx-proxy:
+    external: true
+
+services:
+  proxy:
+    image: nginx:1.19
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /apps/bitwarden/bwdata/ssl:/etc/ssl
+      - ./conf.d:/etc/nginx/conf.d
+      - ./log:/var/log/nginx
+      - /apps/letsencrypt/etc:/etc/letsencrypt
+    networks:
+      - nginx-proxy
+    restart: always

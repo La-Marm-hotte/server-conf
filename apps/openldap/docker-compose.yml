@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  openldap:
+    image: osixia/openldap
+    ports:
+      - '389:389'
+      - '636:636'
+    env_file:
+      - ./config/env
+    volumes:
+      - ./data:/var/lib/ldap
+      - ./slapd.d:/etc/ldap/slapd.d
+      - /apps/letsencrypt/etc:/container/service/slapd/assets/certs
+    hostname: 'ldap.la-marmhotte.org'
+    restart: always
