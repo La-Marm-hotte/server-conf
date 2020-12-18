@@ -4,9 +4,9 @@ services:
   nginx:
     environment:
       VIRTUAL_PORT: 8080
-      VIRTUAL_HOST: xxx.example.com
-      LETSENCRYPT_HOST: xxx.example.com
-      LETSENCRYPT_EMAIL: contact@xxx.example.com
+      VIRTUAL_HOST: bitwarden.example.com
+      LETSENCRYPT_HOST: bitwarden.example.com
+      LETSENCRYPT_EMAIL: contact@example.com
 
 networks:
   default:
