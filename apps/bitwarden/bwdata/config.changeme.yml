@@ -2,4 +2,9 @@
 url: bitwarden.example.com 
 # set empty the two parameters above
 http_port: 
-https_port: 
+https_port:
+# use our own certificates instead of the internal let's encrypt
+ssl_managed_lets_encrypt: false
+ssl_certificate_path: /etc/ssl/live/bitwarden.example.com/cert.pem
+ssl_key_path: /etc/ssl/live/bitwarden.example.com/privkey.pem
+ssl_ca_path: /etc/ssl/live/bitwarden.example.com/chain.pem
