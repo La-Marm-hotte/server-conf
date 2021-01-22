@@ -13,6 +13,8 @@ Bitwarden
 - dépôt : https://github.com/bitwarden/server
 - doc : https://bitwarden.com/help/article/install-on-premise/
 
+On utilise BitBetter pour créer une organisation : https://github.com/alexyao2015/BitBetter
+
 ## Proxy inversé
 Nginx
 - dépôt : http://hg.nginx.org/nginx/
