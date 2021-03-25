@@ -43,3 +43,21 @@ Keycloak
 Wordpress
 - dépôt : https://github.com/WordPress/WordPress
 - doc : https://docs.docker.com/compose/wordpress/
+
+## Envoyer un courriel
+### Avec s-nail (méthode préférée)
+
+```bash
+echo -e "contenu du mail" | s-nail -s "sujet" user@example.org
+```
+
+### Avec msmtp
+
+```bash
+/usr/sbin/sendmail user@example.org << EOF | cat
+Subject: test
+
+Contenu du mail
+EOF
+```
+
