@@ -4,19 +4,19 @@ Les applications sont installées dans `/apps`.
 Elles sont gérées par docker et docker-compose.
 
 ## Gestion des containeurs
-Docker
+Docker (debian)
 - dépôt : https://github.com/docker/cli
 - doc : https://docs.docker.com/
 
 ## Coffre-fort
-Bitwarden
+Bitwarden (docker)
 - dépôt : https://github.com/bitwarden/server
 - doc : https://bitwarden.com/help/article/install-on-premise/
 
 On utilise BitBetter pour créer une organisation : https://github.com/alexyao2015/BitBetter
 
 ## Proxy inversé
-Nginx
+Nginx (docker)
 - dépôt : http://hg.nginx.org/nginx/
 - doc : https://nginx.org/en/docs/
 
@@ -29,20 +29,28 @@ Let's encrypt (docker)
 - doc : https://certbot.eff.org/docs/install.html#running-with-docker
 
 ## Annuaire
-OpenLDAP
+OpenLDAP (docker)
 - On utilise l'image docker de osixia
 - dépôt : https://github.com/osixia/docker-openldap
 - doc : https://www.openldap.org/doc/admin24/
 
 ## Authentification et gestion des utilisateurs
-Keycloak
+Keycloak (docker)
 - dépôt : https://github.com/keycloak/keycloak
 - doc : https://www.keycloak.org/documentation.html
 
 ## Moteur de site web
-Wordpress
+Wordpress (docker)
 - dépôt : https://github.com/WordPress/WordPress
 - doc : https://docs.docker.com/compose/wordpress/
+
+## Mises à jour automatiques
+Unattended-upgrades (debian)
+- dépôt: https://github.com/mvo5/unattended-upgrades
+
+## Blocage des IP
+Fail2ban (debian)
+- dépôt : https://github.com/fail2ban/fail2ban
 
 ## Envoyer un courriel
 ### Avec s-nail (méthode préférée)
