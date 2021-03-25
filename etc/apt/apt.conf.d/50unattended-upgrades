@@ -17,5 +17,5 @@ Unattended-Upgrade::Remove-New-Unused-Dependencies "true";
 
 Unattended-Upgrade::Automatic-Reboot "true";
 
-Unattended-Upgrade::Automatic-Reboot-Time "02:00";
+Unattended-Upgrade::Automatic-Reboot-Time "04:00";
 

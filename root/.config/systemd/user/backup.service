@@ -1,0 +1,10 @@
+[Unit]
+Description=Backup the VPS on mega.nz
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash /root/backup.sh
+
+[Install]
+WantedBy=multi-user.target
+

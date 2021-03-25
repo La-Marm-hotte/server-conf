@@ -1,0 +1,11 @@
+[Unit]
+Description=backup on mega.nz timer
+
+[Timer]
+OnCalendar=*-*-1 02:00:00
+Persistent=true
+Unit=backup.service
+
+[Install]
+WantedBy=timers.target
+

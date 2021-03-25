@@ -23,6 +23,7 @@ init_dir()
 
 backup_bitwarden()
 {
+  echo "copying bitwarden files..."
   BWDATA="/apps/bitwarden/bwdata"
   BWBACKUP="$BACKUP/bitwarden/bwdata"
 
@@ -35,6 +36,7 @@ backup_bitwarden()
 
 backup_keycloak()
 {
+  echo "copying keycloak files..."
   KCDATA="/apps/keycloak"
   KCBACKUP="$BACKUP/keycloak"
 
@@ -47,6 +49,7 @@ backup_keycloak()
 
 backup_letsencrypt()
 {
+  echo "copying let's encrypt files..."
   LEDATA="/apps/letsencrypt/etc"
   LEBACKUP="$BACKUP/letsencrypt/etc"
 
@@ -55,6 +58,7 @@ backup_letsencrypt()
 
 backup_nginx()
 {
+  echo "copying nginx files..."
   NGDATA="/apps/nginx"
   NGBACKUP="$BACKUP/nginx"
 
@@ -64,6 +68,7 @@ backup_nginx()
 
 backup_openldap()
 {
+  echo "copying open ldap files..."
   OLDATA="/apps/openldap"
   OLBACKUP="$BACKUP/openldap"
 
@@ -78,6 +83,7 @@ backup_openldap()
 
 backup_wordpress()
 {
+  echo "copying wordpress files..."
   WPDATA="/apps/wordpress"
   WPBACKUP="$BACKUP/wordpress"
 
@@ -92,16 +98,19 @@ backup_wordpress()
 
 upload()
 {
+  echo "upload the backup..."
   mega-put -c /backup "$REMOTE/$(date -I)/"
 }
 
 remove_dir()
 {
+  echo "removing the files..."
   rm -rf "$BACKUP"
 }
 
 clean_old_backup()
 {
+  echo "cleaning the old backup..."
   CLEAN_AFTER="5"
   CLEAN_DATE=$(date -d "-$CLEAN_AFTER day 13:00" '+%Y-%m-%d')
 
@@ -120,6 +129,7 @@ run()
   upload
   remove_dir
   clean_old_backup
+  exit 0
 }
 
 run "$@"
