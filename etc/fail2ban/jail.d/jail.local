@@ -1,0 +1,14 @@
+[DEFAULT]
+bantime = 1h
+destemail = dsi@example.org
+sender = alerts@example.org
+mta = sendmail
+
+
+[sshd]
+enabled = true
+
+[nginx-http-auth]
+logpath = /apps/nginx/log/access.log
+enabled = true
+
