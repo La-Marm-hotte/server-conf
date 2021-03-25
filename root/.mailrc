@@ -1,0 +1,14 @@
+account contact {
+  set v15-compat
+  set from="Contact <contact@example.org>"
+  set mta=smtp://contact%40example.org:urlencodedpassword@mail.example.org:587 smtp-use-starttls
+}
+
+account alerts {
+  set v15-compat
+  set from="Server alerts <alerts@example.org>"
+  set mta=smtp://alerts%40example.org:urlencodedpassword@mail.example.org:587 smtp-use-starttls
+}
+
+account alerts
+
