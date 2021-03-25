@@ -44,7 +44,7 @@ backup_keycloak()
   copy "$KCDATA" "$KCKACKUP" "config"
 
   mkdir -p "$KCBACKUP/postgres"
-  docker-compose -f "$KCDATA/docker-compose.yml" exec postgres pg_dump -U keycloak keycloak > "$KCBACKUP/postgres/keycloak.dump.sql"
+  docker-compose -f "$KCDATA/docker-compose.yml" exec -T postgres pg_dump -U keycloak keycloak > "$KCBACKUP/postgres/keycloak.dump.sql"
 }
 
 backup_letsencrypt()
@@ -77,8 +77,8 @@ backup_openldap()
 
   mkdir -p "$OLBACKUP/data"
   # see https://tylersguides.com/articles/backup-restore-openldap/
-  docker-compose -f "$OLDATA/docker-compose.yml" exec openldap slapcat -n 0 > "$OLBACKUP/data/configuration.ldif"
-  docker-compose -f "$OLDATA/docker-compose.yml" exec openldap slapcat -n 1 > "$OLBACKUP/data/data.ldif"
+  docker-compose -f "$OLDATA/docker-compose.yml" exec -T openldap slapcat -n 0 > "$OLBACKUP/data/configuration.ldif"
+  docker-compose -f "$OLDATA/docker-compose.yml" exec -T openldap slapcat -n 1 > "$OLBACKUP/data/data.ldif"
 }
 
 backup_wordpress()
@@ -93,7 +93,7 @@ backup_wordpress()
 
   mkdir -p "$WPBACKUP/mysql"
   local password=$(cat "$WPDATA/config/my_env" | grep MYSQL_ROOT_PASSWORD | sed -E 's/.*=(.*)/\1/')
-  docker-compose -f "$WPDATA/docker-compose.yml" exec -e MYSQL_PWD="$password" mysql mysqldump -uroot --all-databases > "$WPBACKUP/mysql/wordpress.dump.sql"
+  docker-compose -f "$WPDATA/docker-compose.yml" exec -T -e MYSQL_PWD="$password" mysql mysqldump -uroot --all-databases > "$WPBACKUP/mysql/wordpress.dump.sql"
 }
 
 upload()
