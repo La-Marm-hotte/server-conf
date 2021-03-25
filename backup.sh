@@ -88,6 +88,11 @@ backup_wordpress()
   docker-compose -f "$WPDATA/docker-compose.yml" exec -e MYSQL_PWD="$password" mysql mysqldump -uroot --all-databases > "$WPBACKUP/mysql/wordpress.dump.sql"
 }
 
+upload()
+{
+  mega-put -c /backup "/vps-backup/$(date -I)/"
+}
+
 remove_dir()
 {
   rm -rf "$BACKUP"
@@ -102,7 +107,8 @@ run()
   backup_nginx
   backup_openldap
   backup_wordpress
-  #remove_dir
+  upload
+  remove_dir
 }
 
 run "$@"
