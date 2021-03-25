@@ -1,0 +1,10 @@
+[Unit]
+Description=Upgrade the applications running with docker
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash /root/upgrade.sh
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,11 @@
+[Unit]
+Description=upgrade docker apps timer
+
+[Timer]
+OnCalendar=*-*-1 03:00:00
+Persistent=true
+Unit=upgrade.service
+
+[Install]
+WantedBy=timers.target
+
