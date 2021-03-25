@@ -17,6 +17,8 @@ init_dir()
 {
   BACKUP="/backup"
   mkdir "$BACKUP"
+
+  REMOTE="/vps-backup"
 }
 
 backup_bitwarden()
@@ -90,12 +92,20 @@ backup_wordpress()
 
 upload()
 {
-  mega-put -c /backup "/vps-backup/$(date -I)/"
+  mega-put -c /backup "$REMOTE/$(date -I)/"
 }
 
 remove_dir()
 {
   rm -rf "$BACKUP"
+}
+
+clean_old_backup()
+{
+  CLEAN_AFTER="5"
+  CLEAN_DATE=$(date -d "-$CLEAN_AFTER day 13:00" '+%Y-%m-%d')
+
+  mega-rm -rf "$REMOTE/$CLEAN_DATE"
 }
 
 run()
@@ -109,6 +119,7 @@ run()
   backup_wordpress
   upload
   remove_dir
+  clean_old_backup
 }
 
 run "$@"
