@@ -1,0 +1,21 @@
+Unattended-Upgrade::Origins-Pattern {
+        "origin=Debian,codename=${distro_codename},label=Debian";
+        "origin=Debian,codename=${distro_codename},label=Debian-Security";
+};
+
+Unattended-Upgrade::Package-Blacklist {
+};
+
+Unattended-Upgrade::Mail "dsi@example.org";
+Unattended-Upgrade::Sender "alerts@example.org";
+
+Unattended-Upgrade::MailOnlyOnError "false";
+
+Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
+
+Unattended-Upgrade::Remove-New-Unused-Dependencies "true";
+
+Unattended-Upgrade::Automatic-Reboot "true";
+
+Unattended-Upgrade::Automatic-Reboot-Time "02:00";
+
