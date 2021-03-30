@@ -18,6 +18,8 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:latest
+    volumes:
+      - ./keycloak/themes/marmhotte:/opt/jboss/keycloak/themes/marmhotte
     env_file:
       - ./config/env
     networks:
