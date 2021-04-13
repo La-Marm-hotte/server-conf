@@ -23,7 +23,6 @@ Nginx (docker)
 ## Certificats SSL
 Let's encrypt (docker)
 - On utilise Systemd pour gérer l'exécution de l'image docker :
-  - systemctl enable letsencrypt@xxxxx.service
   - systemctl start letsencrypt@xxxxx.service
   - systemctl status -n 20 letsencrypt@xxxxx.service
 - doc : https://certbot.eff.org/docs/install.html#running-with-docker
