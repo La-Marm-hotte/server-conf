@@ -2,7 +2,7 @@
 Description=upgrade docker apps timer
 
 [Timer]
-OnCalendar=*-*-1 03:00:00
+OnCalendar=*-*-* 03:00:00
 Persistent=true
 Unit=upgrade.service
 
