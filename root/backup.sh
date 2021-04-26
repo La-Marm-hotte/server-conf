@@ -112,7 +112,7 @@ remove_dir()
 clean_old_backup()
 {
   echo "cleaning the old backup..."
-  CLEAN_AFTER="5"
+  CLEAN_AFTER="10"
   CLEAN_DATE=$(date -d "-$CLEAN_AFTER day 13:00" '+%Y-%m-%d')
 
   mega-rm -rf "$REMOTE/$CLEAN_DATE"
