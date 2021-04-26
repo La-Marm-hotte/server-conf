@@ -41,8 +41,8 @@ backup_keycloak()
   KCBACKUP="$BACKUP/keycloak"
 
   copy "$KCDATA" "$KCBACKUP" "docker-compose.yml"
-  copy "$KCDATA" "$KCKACKUP" "config"
-  copy "$KCDATA" "$KCKACKUP" "keycloak/themes/marmhotte"
+  copy "$KCDATA" "$KCBACKUP" "config"
+  copy "$KCDATA" "$KCBACKUP" "keycloak/themes/marmhotte"
 
   mkdir -p "$KCBACKUP/postgres"
   docker-compose -f "$KCDATA/docker-compose.yml" exec -T postgres pg_dump -U keycloak keycloak > "$KCBACKUP/postgres/keycloak.dump.sql"
