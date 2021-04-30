@@ -27,6 +27,14 @@ Let's encrypt (docker)
   - systemctl status -n 20 letsencrypt@xxxxx.service
 - doc : https://certbot.eff.org/docs/install.html#running-with-docker
 
+Commandes utiles :
+```bash
+# lister tous les certificats
+certificates
+# supprimer un certificat
+removecert <domaine>
+```
+
 ## Annuaire
 OpenLDAP (docker)
 - On utilise l'image docker de osixia
