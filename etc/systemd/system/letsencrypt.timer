@@ -3,7 +3,7 @@ Description=letsencrypt oneshot timer
 Requires=docker.service
 
 [Timer]
-OnCalendar=*-*-1 06:00:00
+OnCalendar=*-*-1,15 06:00:00
 Persistent=true
 Unit=letsencrypt_renew.service
 
