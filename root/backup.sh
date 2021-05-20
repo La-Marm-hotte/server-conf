@@ -41,8 +41,8 @@ backup_keycloak()
   KCBACKUP="$BACKUP/keycloak"
 
   copy "$KCDATA" "$KCBACKUP" "docker-compose.yml"
-  copy "$KCDATA" "$KCKACKUP" "config"
-  copy "$KCDATA" "$KCKACKUP" "keycloak/themes/marmhotte"
+  copy "$KCDATA" "$KCBACKUP" "config"
+  copy "$KCDATA" "$KCBACKUP" "keycloak/themes/marmhotte"
 
   mkdir -p "$KCBACKUP/postgres"
   docker-compose -f "$KCDATA/docker-compose.yml" exec -T postgres pg_dump -U keycloak keycloak > "$KCBACKUP/postgres/keycloak.dump.sql"
@@ -112,7 +112,7 @@ remove_dir()
 clean_old_backup()
 {
   echo "cleaning the old backup..."
-  CLEAN_AFTER="5"
+  CLEAN_AFTER="10"
   CLEAN_DATE=$(date -d "-$CLEAN_AFTER day 13:00" '+%Y-%m-%d')
 
   mega-rm -rf "$REMOTE/$CLEAN_DATE"
