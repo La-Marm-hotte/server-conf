@@ -12,6 +12,7 @@ services:
       - '443:443'
     volumes:
       - /apps/bitwarden/bwdata/ssl:/etc/ssl
+      - /apps/bitwarden/custom:/usr/custom-content/bitwarden
       - ./conf.d:/etc/nginx/conf.d
       - ./log:/var/log/nginx
       - /apps/letsencrypt/etc:/etc/letsencrypt

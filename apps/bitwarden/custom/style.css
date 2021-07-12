@@ -1,0 +1,91 @@
+app-login div.card-body div.d-flex a.btn.btn-outline-secondary.btn-block.ml-2.mt-0 {
+  display: none; 
+}
+
+app-login a[routerlink="/sso"] {
+  position: relative;
+}
+
+app-login a[routerlink="/sso"]::after {
+  content: "Connectez-vous avec votre compte ExampleOrg";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  height: 100%;
+  background-color: #fbfbfb;
+  border-radius: 4px;
+  padding: .375rem .75rem;
+}
+
+app-login .form-group,
+app-login .form-check,
+app-login hr,
+app-login .d-flex button.btn-primary {
+  display: none;
+}
+
+app-login .card-body input#toggle {
+  display: none;
+}
+
+app-login .card-body label.toggle-admin-connect {
+  cursor: pointer;
+}
+
+app-login .card-body label.toggle-admin-connect::before {
+  content: '🠶 ';
+}
+
+app-login .card-body input#toggle:checked~label.toggle-admin-connect::before {
+  content: '🠷 ';
+}
+
+app-login .card-body input#toggle:checked~.form-group::before {
+  content: "Ce formulaire de connexion est uniquement destiné au paramétrage. Merci de vous connecter avec votre compte ExampleOrg en utilisant le bouton en bas.";
+  margin-bottom: 10px;
+  text-align: center;
+  display: block;
+}
+
+app-login .card-body input#toggle:checked~.form-group ~ .form-group::before {
+  content: '';
+}
+
+app-login .card-body input#toggle:checked~.form-group,
+app-login .card-body input#toggle:checked~.form-check,
+app-login .card-body input#toggle:checked~hr,
+app-login .card-body input#toggle:checked~.d-flex button.btn-primary {
+  display: block;
+}
+
+app-login form.container .col-5::before {
+  background-image: url('logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 53px;
+  width: 284px;
+  content: '';
+  display: block;
+  margin: 10px auto;
+}
+
+app-login form.container img.logo {
+  display: none;
+}
+
+app-login form.container p.lead {
+  position: relative;
+}
+
+app-login form.container p.lead::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  height: 100%;
+  content: "Identifiez-vous pour accéder au coffre sécurisé de ExampleOrg";
+  background-color: #ecf0f5;
+}
