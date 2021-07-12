@@ -40,6 +40,7 @@ OpenLDAP (docker)
 - On utilise l'image docker de osixia
 - dépôt : https://github.com/osixia/docker-openldap
 - doc : https://www.openldap.org/doc/admin24/
+- doc : https://wiki.debian.org/LDAP/OpenLDAPSetup
 
 ## Authentification et gestion des utilisateurs
 Keycloak (docker)
