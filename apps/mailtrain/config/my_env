@@ -1,4 +1,0 @@
-MYSQL_ROOT_PASSWORD=password
-MYSQL_DATABASE=mailtrain
-MYSQL_USER=mailtrain
-MYSQL_PASSWORD=mailtrain
