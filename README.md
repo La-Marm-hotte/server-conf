@@ -15,6 +15,8 @@ Bitwarden (docker)
 
 On utilise BitBetter pour créer une organisation : https://github.com/alexyao2015/BitBetter
 
+On utilise Bitwarden Directory Connector (bwdc), via une tâche planifiée (cron) pour synchroniser les utilisateurs depuis LDAP : https://bitwarden.com/help/article/directory-sync/
+
 ## Proxy inversé
 Nginx (docker)
 - dépôt : http://hg.nginx.org/nginx/
