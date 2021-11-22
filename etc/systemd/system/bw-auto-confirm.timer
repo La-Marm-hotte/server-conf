@@ -1,0 +1,12 @@
+[Unit]
+Description=bitwarden confirm organization accounts
+Requires=docker.service
+
+[Timer]
+OnCalendar=*:0/15
+Persistent=true
+Unit=bw-auto-confirm.service
+
+[Install]
+WantedBy=timers.target
+
